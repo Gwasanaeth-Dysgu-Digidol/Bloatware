@@ -90,7 +90,7 @@ $WhitelistedApps = @(
     'MIDIBerry',
     'Slack',
     'Microsoft.SecHealthUI',
-    'WavesAudio.MaxxAudioProforDell2019',
+    'WavesAudio.MaxxAudioProforDell2019',<#
     'Dell Optimizer Core',
     'Dell SupportAssist Remediation',
     'Dell SupportAssist OS Recovery Plugin for Dell Update',
@@ -99,7 +99,7 @@ $WhitelistedApps = @(
     'Dell Display Manager 2.1',
     'Dell Display Manager 2.2',
     'Dell Peripheral Manager',
-    'MSTeams',
+    'MSTeams',#>
     'Microsoft.Paint',
     'Microsoft.OutlookForWindows',
     'Microsoft.WindowsTerminal',
@@ -1686,7 +1686,7 @@ if ($mcafeeinstalled -eq "true") {
     ### Download McAfee Consumer Product Removal Tool ###
     write-output "Downloading McAfee Removal Tool"
     # Download Source
-    $URL = 'https://hwbwave15-my.sharepoint.com/:f:/g/personal/davisa88_hwbcymru_net/EvdD7-HTqXRNpsccvWBAeucBim6ZbP-GL1bha8_nCur2fQ?e=aTfk67/mcafeeclean.zip'
+    $URL = 'https://github.com/Gwasanaeth-Dysgu-Digidol/Bloatware/mcafeeclean.zip'
 
     # Set Save Directory
     $destination = 'C:\ProgramData\Debloat\mcafee.zip'
@@ -1705,7 +1705,7 @@ if ($mcafeeinstalled -eq "true") {
     ### Download McAfee Consumer Product Removal Tool ###
     write-output "Downloading McAfee Removal Tool"
     # Download Source
-    $URL = 'https://hwbwave15-my.sharepoint.com/:f:/g/personal/davisa88_hwbcymru_net/EvdD7-HTqXRNpsccvWBAeucBim6ZbP-GL1bha8_nCur2fQ?e=aTfk67/mccleanup.zip'
+    $URL = 'https://github.com/Gwasanaeth-Dysgu-Digidol/Bloatware/mccleanup.zip'
 
     # Set Save Directory
     $destination = 'C:\ProgramData\Debloat\mcafeenew.zip'
@@ -1873,7 +1873,7 @@ $xml = @"
 $xml | Out-File -FilePath "C:\ProgramData\Debloat\o365.xml"
 
 ##Download the ODT
-$odturl = "https://hwbwave15-my.sharepoint.com/:f:/g/personal/davisa88_hwbcymru_net/EvdD7-HTqXRNpsccvWBAeucBim6ZbP-GL1bha8_nCur2fQ?e=aTfk67/odt.exe"
+$odturl = "https://github.com/Gwasanaeth-Dysgu-Digidol/Bloatware/odt.exe"
 $odtdestination = "C:\ProgramData\Debloat\odt.exe"
 Invoke-WebRequest -Uri $odturl -OutFile $odtdestination -Method Get -UseBasicParsing
 
