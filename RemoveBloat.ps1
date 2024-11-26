@@ -259,14 +259,14 @@ $Bloatware = @(
 "Microsoft.WindowsFeedbackHub"
 "Microsoft.WindowsMaps"
 "Microsoft.WindowsSoundRecorder"
-"Microsoft.WindowsStore"
+"Microsoft.WindowsStore"<# Xbox
 "Microsoft.Xbox.TCUI"
 "Microsoft.XboxApp"
 "Microsoft.XboxGameOverlay"
 "Microsoft.XboxGamingOverlay"
 "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
 "Microsoft.XboxIdentityProvider"
-"Microsoft.XboxSpeechToTextOverlay"
+"Microsoft.XboxSpeechToTextOverlay"#>
 "Microsoft.YourPhone"
 "Microsoft.ZuneMusic"
 "Microsoft.ZuneVideo"
@@ -291,7 +291,6 @@ $Bloatware = @(
 #"Microsoft.Whiteboard"
 #"Microsoft.WindowsCamera"
 #"Microsoft.WindowsSoundRecorder"
-"Microsoft.YourPhone"
 #"Microsoft.Todos"
 #"Microsoft.PowerAutomateDesktop"
 )
@@ -349,9 +348,9 @@ $Keys = @(
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
-    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
 
     #Windows File
     "HKCR:\Extensions\ContractId\Windows.File\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
@@ -359,18 +358,18 @@ $Keys = @(
     #Registry keys to delete if they aren't uninstalled by RemoveAppXPackage/RemoveAppXProvisionedPackage
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
 
     #Scheduled Tasks to delete
     "HKCR:\Extensions\ContractId\Windows.PreInstalledConfigTask\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
 
     #Windows Protocol Keys
     "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
     "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
+    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
 
     #Windows Share Target
     "HKCR:\Extensions\ContractId\Windows.ShareTarget\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
@@ -887,7 +886,9 @@ foreach ($sid in $UserSIDs) {
 #                                              Remove Xbox Gaming                                          #
 #                                                                                                          #
 ############################################################################################################
-
+#       Commented out on 26/11/2024 there are features include with the Xbox app that can be useful        #
+############################################################################################################
+<#
 New-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\xbgm" -Name "Start" -PropertyType DWORD -Value 4 -Force
 Set-Service -Name XblAuthManager -StartupType Disabled
 Set-Service -Name XblGameSave -StartupType Disabled
@@ -924,7 +925,7 @@ else {
 New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\GameDVR" -Name "AllowgameDVR" -PropertyType DWORD -Value 0 -Force
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "SettingsPageVisibility" -PropertyType String -Value "hide:gaming-gamebar;gaming-gamedvr;gaming-broadcasting;gaming-gamemode;gaming-xboxnetworking" -Force
 Remove-Item C:\Windows\Temp\SetACL.exe -recurse
-
+#>
 ############################################################################################################
 #                                        Disable Edge Surf Game                                            #
 #                                                                                                          #
@@ -1121,7 +1122,7 @@ function UninstallAppFull {
 write-output "Detecting Manufacturer"
 $details = Get-CimInstance -ClassName Win32_ComputerSystem
 $manufacturer = $details.Manufacturer
-
+<# Ddim yn defnyddio HPs eto
 if ($manufacturer -like "*HP*") {
     write-output "HP detected"
     #Remove HP bloat
@@ -1232,9 +1233,9 @@ if (test-path -Path 'C:\Program Files\HP\Z By HP Data Science Stack Manager\Unin
 
     write-output "Removed HP bloat"
 }
+#>
 
-
-
+<# Ddim yn defnyddio DELL eto
 if ($manufacturer -like "*Dell*") {
     write-output "Dell detected"
     #Remove Dell bloat
@@ -1395,7 +1396,7 @@ if ($manufacturer -like "*Dell*") {
     }
 
 }
-
+#>
 
 if ($manufacturer -like "Lenovo") {
     write-output "Lenovo detected"
