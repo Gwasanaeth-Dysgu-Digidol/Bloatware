@@ -240,7 +240,7 @@ $Bloatware = @(
 "Microsoft.Office.OneNote"
 "Microsoft.Office.Sway"
 "Microsoft.OneConnect"
-#"Microsoft.OneDriveSync" ## Keep as we need OneDrive
+"Microsoft.OneDriveSync"
 "Microsoft.People"
 "Microsoft.PowerAutomateDesktop"
 "Microsoft.PowerAutomateDesktopCopilotPlugin"
@@ -259,14 +259,14 @@ $Bloatware = @(
 "Microsoft.WindowsFeedbackHub"
 "Microsoft.WindowsMaps"
 "Microsoft.WindowsSoundRecorder"
-"Microsoft.WindowsStore"<# Xbox
+"Microsoft.WindowsStore"
 "Microsoft.Xbox.TCUI"
 "Microsoft.XboxApp"
 "Microsoft.XboxGameOverlay"
 "Microsoft.XboxGamingOverlay"
 "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
 "Microsoft.XboxIdentityProvider"
-"Microsoft.XboxSpeechToTextOverlay"#>
+"Microsoft.XboxSpeechToTextOverlay"
 "Microsoft.YourPhone"
 "Microsoft.ZuneMusic"
 "Microsoft.ZuneVideo"
@@ -348,9 +348,9 @@ $Keys = @(
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
-    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
+    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
     "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
+    "HKCR:\Extensions\ContractId\Windows.BackgroundTasks\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
 
     #Windows File
     "HKCR:\Extensions\ContractId\Windows.File\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
@@ -358,18 +358,18 @@ $Keys = @(
     #Registry keys to delete if they aren't uninstalled by RemoveAppXPackage/RemoveAppXProvisionedPackage
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y"
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
+    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
     "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
+    "HKCR:\Extensions\ContractId\Windows.Launch\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
 
     #Scheduled Tasks to delete
     "HKCR:\Extensions\ContractId\Windows.PreInstalledConfigTask\PackageId\Microsoft.MicrosoftOfficeHub_17.7909.7600.0_x64__8wekyb3d8bbwe"
 
     #Windows Protocol Keys
     "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
-    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"<# Xbox
+    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.PPIProjection_10.0.15063.0_neutral_neutral_cw5n1h2txyewy"
     "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
-    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"#>
+    "HKCR:\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameCallableUI_1000.16299.15.0_neutral_neutral_cw5n1h2txyewy"
 
     #Windows Share Target
     "HKCR:\Extensions\ContractId\Windows.ShareTarget\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0"
@@ -755,9 +755,7 @@ if ($version -like "*Windows 10*") {
 #                                           Windows CoPilot                                                #
 #                                                                                                          #
 ############################################################################################################
-#       Commented out on 25/11/2024 as we think CoPilot will be used within the schools in the future      #
-############################################################################################################
-<#
+
 $version = Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption
 if ($version -like "*Windows 11*") {
     write-output "Removing Windows Copilot"
@@ -851,7 +849,7 @@ if ($version -like "*Windows 11*") {
         }
     }
 }
-#>
+
 ############################################################################################################
 #                                              Remove Recall                                               #
 #                                                                                                          #
@@ -886,9 +884,7 @@ foreach ($sid in $UserSIDs) {
 #                                              Remove Xbox Gaming                                          #
 #                                                                                                          #
 ############################################################################################################
-#       Commented out on 26/11/2024 there are features include with the Xbox app that can be useful        #
-############################################################################################################
-<#
+
 New-ItemProperty -Path "HKLM:\System\CurrentControlSet\Services\xbgm" -Name "Start" -PropertyType DWORD -Value 4 -Force
 Set-Service -Name XblAuthManager -StartupType Disabled
 Set-Service -Name XblGameSave -StartupType Disabled
@@ -925,7 +921,7 @@ else {
 New-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\GameDVR" -Name "AllowgameDVR" -PropertyType DWORD -Value 0 -Force
 New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "SettingsPageVisibility" -PropertyType String -Value "hide:gaming-gamebar;gaming-gamedvr;gaming-broadcasting;gaming-gamemode;gaming-xboxnetworking" -Force
 Remove-Item C:\Windows\Temp\SetACL.exe -recurse
-#>
+
 ############################################################################################################
 #                                        Disable Edge Surf Game                                            #
 #                                                                                                          #
@@ -1122,7 +1118,7 @@ function UninstallAppFull {
 write-output "Detecting Manufacturer"
 $details = Get-CimInstance -ClassName Win32_ComputerSystem
 $manufacturer = $details.Manufacturer
-<# Ddim yn defnyddio HPs eto
+
 if ($manufacturer -like "*HP*") {
     write-output "HP detected"
     #Remove HP bloat
@@ -1205,7 +1201,7 @@ if ($manufacturer -like "*HP*") {
 
     ##Remove HP Connect Optimizer if setup.exe exists
     if (test-path -Path 'C:\Program Files (x86)\InstallShield Installation Information\{6468C4A5-E47E-405F-B675-A70A70983EA6}\setup.exe') {
-        invoke-webrequest -uri "https://raw.githubusercontent.com/andrew-s-taylor/public/main/De-Bloat/HPConnOpt.iss" -outfile "C:\Windows\Temp\HPConnOpt.iss"
+        invoke-webrequest -uri "hhttps://github.com/Gwasanaeth-Dysgu-Digidol/Bloatware/blob/main/HPConnOpt.iss" -outfile "C:\Windows\Temp\HPConnOpt.iss"
 
         &'C:\Program Files (x86)\InstallShield Installation Information\{6468C4A5-E47E-405F-B675-A70A70983EA6}\setup.exe' @('-s', '-f1C:\Windows\Temp\HPConnOpt.iss')
     }
@@ -1233,9 +1229,7 @@ if (test-path -Path 'C:\Program Files\HP\Z By HP Data Science Stack Manager\Unin
 
     write-output "Removed HP bloat"
 }
-#>
 
-<# Ddim yn defnyddio DELL eto
 if ($manufacturer -like "*Dell*") {
     write-output "Dell detected"
     #Remove Dell bloat
@@ -1396,12 +1390,11 @@ if ($manufacturer -like "*Dell*") {
     }
 
 }
-#>
 
 if ($manufacturer -like "Lenovo") {
     write-output "Lenovo detected"
 
-    #Remove HP bloat
+    #Remove Lennovo bloat
 
     ##Lenovo Specific
     # Function to uninstall applications with .exe uninstall strings
